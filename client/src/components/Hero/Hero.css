@@ -97,4 +97,10 @@
   {
     font-size: 0.8rem;
   }
+  .search-bar {
+    padding: 0.5rem 5px;
+  }
+  .search-bar > input{
+    width: 50%;
+  }
 }
