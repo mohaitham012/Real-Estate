@@ -38,4 +38,11 @@ export const getProperty = async (id) => {
   }
 };
 
-// yarn add esri-leaflet-geocoder@2.3.3
+export const createUser = async (email) => {
+  try {
+    await api.post(`user/register`, {email});
+  } catch (error) {
+    toast.error("Something went wrong");
+    throw error
+  }
+}
