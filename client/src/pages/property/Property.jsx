@@ -13,6 +13,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import BookingModal from "../../components/BookingModal/BookingModal";
 import UserDetailsContext from "../../../context/UserDetailsContext";
 import { Button } from "@mantine/core";
+import Heart from "../../components/Heart/Heart";
 
 const Property = () => {
   const { pathname } = useLocation();
@@ -65,7 +66,7 @@ const Property = () => {
     <div className="wrapper">
       <div className="flexColStart paddings innerWidth property-container">
         <div className="like">
-          <AiFillHeart size={24} color="white" />
+          <Heart id={id}/>
         </div>
         <img src={data?.image} alt="home page" />
 

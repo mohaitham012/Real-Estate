@@ -3,11 +3,15 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import UserDetailsContext from "../../../context/UserDetailsContext";
 import { useMutation } from "react-query";
 import { createUser } from "../../utils/api";
+import useFavourites from "../../hooks/useFavourites";
+import UserDetailsContext from "../../../context/UserDetailsContext";
+import useBookings from "../../hooks/useBookings";
 
 const Layout = () => {
+  useFavourites();
+  useBookings();
   const { isAuthenticated, user, getAccessTokenWithPopup } = useAuth0();
   const { setUserDetails } = useContext(UserDetailsContext);
   const { mutate } = useMutation({
