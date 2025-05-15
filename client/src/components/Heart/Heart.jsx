@@ -17,9 +17,7 @@ const Heart = ({ id }) => {
   } = useContext(UserDetailsContext);
 
 useEffect(() => {
-  console.log("favourites changed", favourites);
   const color = checkFavourites(id, favourites);
-  console.log("checkFavourites returned:", color);
   setHeartColor(color);
 }, [favourites]);
 
