@@ -1,7 +1,9 @@
 import React from "react";
 import { Avatar, Menu } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 
 const ProfileMenu = ({ user, logout }) => {
+  const navigate = useNavigate();
   return (
     <div>
       <Menu>
@@ -9,9 +11,15 @@ const ProfileMenu = ({ user, logout }) => {
           <Avatar src={user?.picture} alt="user Image" radius={"xl"} />
         </Menu.Target>
         <Menu.Dropdown>
-          <Menu.Item>Favourites</Menu.Item>
+          <Menu.Item onClick={() => {
+            navigate('./favourites', {replace: true})
+          }
+          }>Favourites</Menu.Item>
 
-          <Menu.Item>Bookings</Menu.Item>
+          <Menu.Item onClick={() => {
+            navigate('./bookings', {replace: true})
+          }
+          }>Bookings</Menu.Item>
 
           <Menu.Item
             onClick={() => {
